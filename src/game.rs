@@ -66,10 +66,10 @@ impl Game {
     if self.food_exists {
       draw_block(FOOD_COLOR, self.food_x, self.food_y, ctx, g);
     }
-    draw_rectangle(BORDER_COLOR, 0, 0, self.width, 1, ctx, g);
-    draw_rectangle(BORDER_COLOR, 0, self.height - 1, self.width, 1, ctx, g);
-    draw_rectangle(BORDER_COLOR, 0, 0, 1, self.height, ctx, g);
-    draw_rectangle(BORDER_COLOR, self.width - 1, 0, self.height, 1, ctx, g);
+    draw_rectangle(BORDER_COLOR, 0, 0, self.width, 1, ctx, g); // top
+    draw_rectangle(BORDER_COLOR, 0, self.height - 1, self.width, 1, ctx, g); // bottom
+    draw_rectangle(BORDER_COLOR, self.width - 1, 0, 1, self.height, ctx, g); // right
+    draw_rectangle(BORDER_COLOR, 0, 0, 1, self.height, ctx, g); // left
 
     if self.game_over {
       draw_rectangle(GAMEOVER_COLOR, 0, 0, self.width, self.height, ctx, g);
